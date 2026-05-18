@@ -6,7 +6,11 @@ function AuctionCard({ auction }) {
     <div className="bg-white rounded-3xl shadow-sm border border-stone-200 overflow-hidden hover:shadow-xl hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full group">
       <div className="relative h-56 bg-stone-100 overflow-hidden">
         <img
-          src={auction?.image || "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop"}
+          src={
+  auction?.image
+    ? `${import.meta.env.VITE_API_URL}/uploads/${auction.image}`
+    : "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop"
+}
           alt={auction?.title || "Auction"}
           className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${auction?.status === "closed" ? "grayscale opacity-80" : ""}`}
         />

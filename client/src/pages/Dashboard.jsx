@@ -225,7 +225,7 @@ function Dashboard() {
                       <div className="space-y-4">
                         {myBids.slice(0, 3).map(auction => (
                           <div key={auction._id} className="flex items-center gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-100 hover:border-stone-200 transition-colors">
-                            <img src={auction.image} alt={auction.title} className="w-16 h-16 rounded-xl object-cover" />
+                            <img src={`${import.meta.env.VITE_API_URL}/uploads/${auction.image}`} alt={auction.title} className="w-16 h-16 rounded-xl object-cover" />
                             <div className="flex-1">
                               <h4 className="font-bold text-stone-900 line-clamp-1">{auction.title}</h4>
                               <p className="text-sm text-stone-500">Current Bid: ₹{auction.currentBid}</p>
@@ -286,7 +286,7 @@ function Dashboard() {
                   {myAuctions.map((auction) => (
                     <div key={auction._id} className="bg-white rounded-3xl shadow-sm border border-stone-200 overflow-hidden flex flex-col h-full group">
                       <div className="relative h-48 bg-stone-100 overflow-hidden">
-                        <img src={auction.image} alt={auction.title} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${auction.status === "closed" ? "grayscale opacity-80" : ""}`} />
+                        <img src={`${import.meta.env.VITE_API_URL}/uploads/${auction.image}`} alt={auction.title} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${auction.status === "closed" ? "grayscale opacity-80" : ""}`} />
                         <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold shadow-md ${auction.status === "closed" ? "bg-red-500 text-white" : "bg-emerald-500 text-white animate-pulse"}`}>
                           {auction.status === "closed" ? "ENDED" : "LIVE"}
                         </div>

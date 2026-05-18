@@ -110,7 +110,7 @@ exports.updateProfilePhoto = async (req, res) => {
 
     const protocol = req.protocol
     const host = req.get("host")
-    const avatarUrl = `${protocol}://${host}/uploads/${req.file.filename}`
+    const avatarUrl = req.file.filename
 
     const user = await User.findOneAndUpdate(
       { email },

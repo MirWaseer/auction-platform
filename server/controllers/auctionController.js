@@ -12,7 +12,7 @@ exports.createAuction = async (
     if (req.file) {
       const protocol = req.protocol
       const host = req.get("host")
-      auctionData.image = `${protocol}://${host}/uploads/${req.file.filename}`
+      auctionData.image = req.file.filename
     }
 
     const auction =

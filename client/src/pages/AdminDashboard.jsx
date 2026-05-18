@@ -161,7 +161,7 @@ function AdminDashboard() {
                  {auctions.map(a => (
                    <tr key={a._id} className="hover:bg-stone-50 transition-colors">
                      <td className="px-6 py-4 font-medium text-stone-900 flex items-center gap-3">
-                       <img src={a.image} alt="Auction" className="w-10 h-10 rounded-lg object-cover border border-stone-200" />
+                       <img src={`${import.meta.env.VITE_API_URL}/uploads/${a.image}`} alt="Auction" className="w-10 h-10 rounded-lg object-cover border border-stone-200" />
                        <span className="line-clamp-1">{a.title}</span>
                      </td>
                      <td className="px-6 py-4 text-stone-500">{a.sellerName}</td>

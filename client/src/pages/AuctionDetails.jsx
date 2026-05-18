@@ -225,7 +225,7 @@ function AuctionDetails() {
             {/* IMAGE SECTION */}
             <div className="relative bg-stone-50 flex items-center justify-center p-8 lg:p-12 border-r border-stone-200">
               <img
-                src={auction.image}
+                src={`${import.meta.env.VITE_API_URL}/uploads/${auction.image}`}
                 alt={auction.title}
                 className={`w-full max-h-[500px] object-contain rounded-2xl shadow-sm transition-all duration-700 ${auction.status === "closed" ? "grayscale opacity-70" : "hover:scale-[1.02]"}`}
               />
